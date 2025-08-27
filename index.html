@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rocket Rescue with 8-bit Buttons</title>
+  <!-- Include 8-bit pixel font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="outer-container">
+    <div id="game-container">
+      <video
+        id="background-video"
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source src="videos/space.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div id="hangman">
+        <img
+          id="rocket-img"
+          src="images/rocket0.gif"
+          alt="Rocket"
+        />
+        <img id="explosion-gif" src="images/explosion.gif" alt="Explosion" style="display:none;" />
+      </div>
+
+      <!-- Removed Clue -->
+      <!-- <div id="clue"></div> -->
+
+      <div id="word"></div>
+      <div id="guess-result" aria-live="polite" role="alert" style="font-size: 1.3em; color: #4ec94e; margin-top: 6px; min-height: 1.6em;"></div>
+      <div id="message" class="message-anim"></div>
+
+      <div id="buttons-row">
+        <button id="fullscreen-btn">Full Screen</button>
+        <button id="restart-btn">Restart</button>
+      </div>
+
+      <div id="lose-overlay" class="full-overlay">
+        <div class="lose-content">
+          <div class="lose-title">YOU LOSE</div>
+          <div id="reveal-word-lose"></div>
+          <button id="lose-restart-btn">Play Again</button>
+        </div>
+      </div>
+
+      <div id="win-overlay" class="full-overlay">
+        <div class="win-content">
+          <div class="win-big">🚀🎉</div>
+          <div class="win-title">YOU WIN!</div>
+          <div id="reveal-word-win"></div>
+          <button id="win-restart-btn">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound effects -->
+  <audio id="audio-correct" src="sounds/correct.mp3" preload="auto"></audio>
+  <audio id="audio-wrong" src="sounds/wrong.mp3" preload="auto"></audio>
+  <audio id="audio-win" src="sounds/win.mp3" preload="auto"></audio>
+  <audio id="audio-lose" src="sounds/lose.mp3" preload="auto"></audio>
+  <audio id="audio-bg-music" src="sounds/background-music.mp3" preload="auto" loop></audio>
+  <audio id="audio-explosion" src="sounds/explosion-sound.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
